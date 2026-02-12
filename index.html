@@ -1,268 +1,219 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funngro • Earn, Learn, Grow</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Funngro - India's safest teen freelancing platform. Teens 13-19 earn real money with verified companies. Parents approved. Companies get fresh, affordable talent."/>
+  <meta name="keywords" content="teen freelancing India, earn money online for teens, student side hustle, hire teen freelancers, SheLancer"/>
+
+  <title>Funngro • Earn While You Learn | India's Premier Teen Freelancing Platform</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
-<body class="bg-[#0a0a0a] text-white font-sans">
+<body class="bg-[#0a0a0a] text-white font-sans min-h-screen">
 
-    <!-- Navbar -->
-    <nav class="bg-[#0a0a0a]/95 backdrop-blur-lg sticky top-0 z-50 border-b border-zinc-800">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-orange-500 rounded-2xl flex items-center justify-center text-2xl font-bold">F</div>
-                <span class="text-3xl font-bold tracking-tight">funngro</span>
-            </div>
-            <div id="nav-links" class="hidden md:flex items-center gap-9 text-sm font-medium">
-                <a href="#how" class="hover:text-orange-500 transition">How it Works</a>
-                <a href="#categories" class="hover:text-orange-500 transition">Categories</a>
-                <a href="#projects" class="hover:text-orange-500 transition">Live Projects</a>
-                <a href="#companies" class="hover:text-orange-500 transition">For Companies</a>
-                <a href="#shelancer" class="hover:text-orange-500 transition">SheLancer</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <button onclick="showLoginModal()" class="px-6 py-2.5 text-sm font-medium border border-zinc-700 hover:border-orange-500 rounded-2xl transition">Sign in</button>
-                <button onclick="showApplyModal()" class="px-8 py-2.5 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-2xl transition">Get Started</button>
-                <button id="mobile-btn" class="md:hidden text-3xl"><i class="fas fa-bars"></i></button>
-            </div>
-        </div>
-    </nav>
+<!-- ────────────────────────────────────────────────
+     NAVBAR
+───────────────────────────────────────────────── -->
+<nav class="bg-[#0a0a0a]/95 backdrop-blur-lg sticky top-0 z-50 border-b border-zinc-800">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+    <a href="#" onclick="switchTab('home')" class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-orange-600 rounded-2xl flex items-center justify-center text-2xl font-bold">F</div>
+      <span class="text-3xl font-bold tracking-tight">funngro</span>
+    </a>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-[#0a0a0a] z-50 pt-20 px-8">
-        <div class="flex flex-col gap-6 text-lg">
-            <a href="#how" onclick="toggleMobileMenu()" class="py-2">How it Works</a>
-            <a href="#categories" onclick="toggleMobileMenu()" class="py-2">Categories</a>
-            <a href="#projects" onclick="toggleMobileMenu()" class="py-2">Live Projects</a>
-            <a href="#companies" onclick="toggleMobileMenu()" class="py-2">For Companies</a>
-            <a href="#shelancer" onclick="toggleMobileMenu()" class="py-2">SheLancer</a>
-        </div>
+    <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+      <a href="#" onclick="switchTab('home')"   class="nav-link hover:text-orange-400 transition">Home</a>
+      <a href="#" onclick="switchTab('teen')"   class="nav-link hover:text-orange-400 transition">For Teens</a>
+      <a href="#" onclick="switchTab('company')" class="nav-link hover:text-orange-400 transition">For Companies</a>
     </div>
 
-    <!-- Hero -->
-    <section class="min-h-screen flex items-center pt-16">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8">
-                <h1 class="text-6xl md:text-7xl font-bold leading-tight">Meet <span class="text-orange-500">Funngro</span></h1>
-                <p class="text-2xl text-zinc-400">India's safest & smartest platform for teens (13-19) to work with real companies, earn money, and build their future.</p>
-                <div class="flex flex-wrap gap-4">
-                    <button onclick="showApplyModal()" class="px-10 py-5 bg-orange-500 hover:bg-orange-600 text-black font-bold text-lg rounded-3xl transition">Start Earning Today</button>
-                    <button onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})" class="px-10 py-5 border border-zinc-600 hover:border-orange-500 text-lg rounded-3xl transition">How it Works</button>
-                </div>
-                <div class="flex items-center gap-6 text-sm text-zinc-400">
-                    <div class="flex -space-x-4">
-                        <img src="https://i.pravatar.cc/48?u=1" class="w-10 h-10 rounded-2xl ring-4 ring-[#0a0a0a]" alt="">
-                        <img src="https://i.pravatar.cc/48?u=2" class="w-10 h-10 rounded-2xl ring-4 ring-[#0a0a0a]" alt="">
-                        <img src="https://i.pravatar.cc/48?u=3" class="w-10 h-10 rounded-2xl ring-4 ring-[#0a0a0a]" alt="">
-                    </div>
-                    <p>Trusted by <span class="text-white font-semibold">50 Lakh+</span> Teens & Parents</p>
-                </div>
-            </div>
-            <div class="relative">
-                <img src="https://picsum.photos/id/1015/800/620" class="rounded-3xl shadow-2xl" alt="Teen working on laptop">
-                <div class="absolute -bottom-6 -left-6 bg-zinc-900 border border-zinc-700 rounded-3xl p-6 shadow-xl">
-                    <p class="text-orange-500 font-semibold">₹8,450 earned this month</p>
-                    <p class="text-sm text-zinc-400">by Aarav, 16 • Delhi</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="py-20 border-t border-b border-zinc-800">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10">
-            <div class="text-center">
-                <div id="stat-companies" class="text-5xl font-bold text-orange-500">4,200</div>
-                <p class="text-zinc-400 mt-2">Companies</p>
-            </div>
-            <div class="text-center">
-                <div id="stat-teens" class="text-5xl font-bold text-orange-500">52L+</div>
-                <p class="text-zinc-400 mt-2">Teenlancers</p>
-            </div>
-            <div class="text-center">
-                <div id="stat-projects" class="text-5xl font-bold text-orange-500">18,500</div>
-                <p class="text-zinc-400 mt-2">Projects Completed</p>
-            </div>
-            <div class="text-center">
-                <div id="stat-satisfaction" class="text-5xl font-bold text-orange-500">98%</div>
-                <p class="text-zinc-400 mt-2">Parent Satisfaction</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- How it Works -->
-    <section id="how" class="py-28">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-5xl font-bold text-center mb-4">How Funngro Works</h2>
-            <p class="text-center text-zinc-400 text-xl mb-16">Four simple steps to your first earning</p>
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto bg-orange-500/10 text-orange-500 rounded-3xl flex items-center justify-center text-4xl mb-6">1</div>
-                    <h3 class="font-semibold text-xl">Create Profile</h3>
-                    <p class="text-zinc-400 mt-3">Age verification & skill selection with parent consent</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto bg-orange-500/10 text-orange-500 rounded-3xl flex items-center justify-center text-4xl mb-6">2</div>
-                    <h3 class="font-semibold text-xl">Browse Gigs</h3>
-                    <p class="text-zinc-400 mt-3">Choose from 12+ categories of real company projects</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto bg-orange-500/10 text-orange-500 rounded-3xl flex items-center justify-center text-4xl mb-6">3</div>
-                    <h3 class="font-semibold text-xl">Submit Work</h3>
-                    <p class="text-zinc-400 mt-3">Get feedback and improve in real time</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto bg-orange-500/10 text-orange-500 rounded-3xl flex items-center justify-center text-4xl mb-6">4</div>
-                    <h3 class="font-semibold text-xl">Get Paid + Certificate</h3>
-                    <p class="text-zinc-400 mt-3">Instant UPI payout & official certificate</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories -->
-    <section id="categories" class="py-28 bg-zinc-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-bold text-center mb-16">Popular Categories</h2>
-            <div id="category-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Populated by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Live Projects -->
-    <section id="projects" class="py-28">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
-                <h2 class="text-5xl font-bold">Live Projects</h2>
-                <input id="project-search" type="text" placeholder="Search projects..." class="mt-6 md:mt-0 bg-zinc-900 border border-zinc-700 rounded-3xl px-6 py-3 w-full md:w-96 focus:outline-none focus:border-orange-500">
-            </div>
-            <div id="projects-grid" class="grid md:grid-cols-3 gap-8">
-                <!-- Populated by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-28 bg-zinc-950">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12">What Teens & Parents Say</h2>
-            <div id="testimonial-container" class="relative overflow-hidden">
-                <div id="testimonial-slides" class="flex transition-transform duration-700">
-                    <!-- JS populated -->
-                </div>
-            </div>
-            <div id="testimonial-dots" class="flex justify-center gap-3 mt-10"></div>
-        </div>
-    </section>
-
-    <!-- For Companies -->
-    <section id="companies" class="py-28">
-        <div class="max-w-6xl mx-auto px-6 bg-zinc-900 rounded-3xl p-16">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-5xl font-bold">Hire India's Brightest Teens</h2>
-                    <p class="mt-6 text-xl text-zinc-400">Access verified, creative, and motivated teenagers at 50% lower cost than traditional freelancers.</p>
-                    <ul class="mt-10 space-y-6 text-lg">
-                        <li class="flex gap-4"><span class="text-orange-500">✓</span> Full background & parent verification</li>
-                        <li class="flex gap-4"><span class="text-orange-500">✓</span> Fresh ideas & digital-native skills</li>
-                        <li class="flex gap-4"><span class="text-orange-500">✓</span> Fast turnaround & dedicated support</li>
-                    </ul>
-                    <button onclick="showApplyModal()" class="mt-12 px-10 py-4 bg-orange-500 text-black font-bold rounded-3xl">Post a Project – Free</button>
-                </div>
-                <div class="text-center">
-                    <img src="https://picsum.photos/id/201/600/500" class="rounded-3xl" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SheLancer -->
-    <section id="shelancer" class="py-28 bg-zinc-950">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h2 class="text-5xl font-bold mb-6">SheLancer – Safe Space for Girls</h2>
-            <p class="max-w-2xl mx-auto text-xl text-zinc-400">A dedicated, moderated community empowering young women to learn skills, earn independently, and build confidence.</p>
-            <button onclick="showApplyModal()" class="mt-12 px-12 py-5 bg-orange-500 text-black font-bold rounded-3xl text-lg">Join SheLancer</button>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="py-28 max-w-4xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-        <div id="faq-list" class="space-y-4">
-            <!-- JS populated -->
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="py-20 bg-gradient-to-r from-orange-500 to-amber-500 text-center">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="text-5xl font-bold text-black">Ready to start your journey?</h2>
-            <button onclick="showApplyModal()" class="mt-10 px-16 py-6 bg-black text-white font-bold text-2xl rounded-3xl hover:scale-105 transition">Create Free Account</button>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black py-20 border-t border-zinc-800">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 text-sm">
-            <div>
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-8 h-8 bg-orange-500 rounded-2xl flex items-center justify-center font-bold">F</div>
-                    <span class="text-2xl font-bold">funngro</span>
-                </div>
-                <p class="text-zinc-500">Teenlancer Platform by Wishbanc Technologies Pvt Ltd</p>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-6">Platform</h4>
-                <ul class="space-y-3 text-zinc-400">
-                    <li>For Teens</li>
-                    <li>For Companies</li>
-                    <li>SheLancer</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-6">Company</h4>
-                <ul class="space-y-3 text-zinc-400">
-                    <li>About Us</li>
-                    <li>Shark Tank India</li>
-                    <li>Careers</li>
-                    <li>Blog</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-6">Support</h4>
-                <ul class="space-y-3 text-zinc-400">
-                    <li>Help Center</li>
-                    <li>Safety First</li>
-                    <li>Parent Resources</li>
-                    <li>Contact Us</li>
-                </ul>
-            </div>
-        </div>
-        <div class="text-center text-zinc-600 text-xs mt-16">© 2026 Funngro. All Rights Reserved.</div>
-    </footer>
-
-    <!-- Apply Modal -->
-    <div id="apply-modal" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center">
-        <div class="bg-zinc-900 rounded-3xl max-w-lg w-full mx-4 p-10">
-            <h3 class="text-3xl font-bold mb-8">Create Your Account</h3>
-            <div class="space-y-6">
-                <input id="name" type="text" placeholder="Full Name" class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-orange-500">
-                <input id="age" type="number" placeholder="Age (13-19)" class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-orange-500">
-                <input id="email" type="email" placeholder="Email or Phone" class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-orange-500">
-            </div>
-            <button onclick="submitApplication()" class="mt-10 w-full py-5 bg-orange-500 text-black font-bold rounded-3xl">Continue →</button>
-            <p class="text-center text-xs text-zinc-500 mt-6">Parent/Guardian consent required</p>
-        </div>
+    <div class="flex items-center gap-4">
+      <button onclick="showLoginModal()" class="px-6 py-2.5 text-sm font-medium border border-zinc-700 hover:border-orange-500 rounded-2xl transition">Sign in</button>
+      <button onclick="showApplyModal()" class="px-8 py-2.5 bg-orange-600 hover:bg-orange-700 text-black font-semibold rounded-2xl transition">Get Started Free</button>
+      <button id="mobile-btn" class="md:hidden text-3xl"><i class="fas fa-bars"></i></button>
     </div>
+  </div>
+</nav>
 
-    <!-- Success Toast -->
-    <div id="success-toast" class="hidden fixed bottom-8 left-1/2 -translate-x-1/2 bg-green-600 text-white px-8 py-4 rounded-3xl shadow-2xl">Application submitted successfully! 🎉</div>
+<!-- Mobile menu -->
+<div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-[#0a0a0a] z-50 pt-20 px-8">
+  <div class="flex flex-col gap-6 text-lg">
+    <a href="#" onclick="switchTab('home'); toggleMobileMenu()" class="py-2">Home</a>
+    <a href="#" onclick="switchTab('teen'); toggleMobileMenu()" class="py-2">For Teens</a>
+    <a href="#" onclick="switchTab('company'); toggleMobileMenu()" class="py-2">For Companies</a>
+  </div>
+</div>
 
-    <script src="script.js"></script>
+<!-- ────────────────────────────────────────────────
+     TABBED CONTENT
+───────────────────────────────────────────────── -->
+
+<!-- HOME -->
+<div id="home" class="tab-content active">
+  <section class="min-h-screen flex items-center bg-gradient-to-br from-zinc-950 via-black to-zinc-950 pt-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div class="space-y-8">
+        <h1 class="text-6xl md:text-7xl font-extrabold leading-tight">
+          Earn real money<br/>while you <span class="text-orange-500">learn</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-zinc-300 max-w-2xl">
+          India’s safest platform for teens (13–19) to work with real companies, earn money, gain certificates, and build a strong portfolio — all with full parent approval.
+        </p>
+        <div class="flex flex-wrap gap-5">
+          <button onclick="showApplyModal()" class="px-10 py-5 bg-orange-600 hover:bg-orange-700 text-black font-bold text-lg rounded-3xl transition shadow-lg shadow-orange-900/40">
+            Start Earning Now
+          </button>
+          <button onclick="switchTab('teen')" class="px-10 py-5 border-2 border-orange-600/70 hover:border-orange-500 text-lg rounded-3xl transition">
+            Learn More (Teens)
+          </button>
+        </div>
+      </div>
+      <div class="relative hidden md:block">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" alt="Teenager working on laptop" class="rounded-3xl shadow-2xl shadow-orange-900/30"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-24 border-t border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+      <div><div class="text-6xl font-bold text-orange-500" id="count-companies">0</div><p class="text-zinc-400 mt-3">Companies</p></div>
+      <div><div class="text-6xl font-bold text-orange-500" id="count-teens">0</div><p class="text-zinc-400 mt-3">Teenlancers</p></div>
+      <div><div class="text-6xl font-bold text-orange-500" id="count-projects">0</div><p class="text-zinc-400 mt-3">Projects</p></div>
+      <div><div class="text-6xl font-bold text-orange-500" id="count-satisfaction">0</div><p class="text-zinc-400 mt-3">% Satisfaction</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- TEEN -->
+<div id="teen" class="tab-content">
+  <section class="min-h-screen flex items-center bg-gradient-to-br from-zinc-950 via-black to-zinc-950 pt-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div class="space-y-8">
+        <h1 class="text-6xl md:text-7xl font-extrabold leading-tight">
+          For <span class="text-orange-500">Teens</span>
+        </h1>
+        <p class="text-2xl text-zinc-300">
+          Earn real money • Gain real experience • Get official certificates • Build confidence &amp; portfolio — safely.
+        </p>
+        <button onclick="showApplyModal()" class="px-12 py-6 bg-orange-600 hover:bg-orange-700 text-black font-bold text-xl rounded-3xl transition shadow-lg shadow-orange-900/40">
+          Create Free Teen Account
+        </button>
+      </div>
+      <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="Teen girl smiling while working on laptop" class="rounded-3xl shadow-2xl shadow-orange-900/30 hidden md:block"/>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16">Why thousands of teens choose Funngro</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="bg-zinc-900/60 backdrop-blur-sm border border-zinc-800 p-10 rounded-3xl hover:border-orange-600/50 transition">
+          <div class="text-6xl text-orange-500 mb-6"><i class="fas fa-rupee-sign"></i></div>
+          <h3 class="text-3xl font-bold mb-4">Real Earnings</h3>
+          <p class="text-zinc-300 text-lg">Projects pay ₹1,500 – ₹25,000+. Instant UPI after approval.</p>
+        </div>
+        <div class="bg-zinc-900/60 backdrop-blur-sm border border-zinc-800 p-10 rounded-3xl hover:border-orange-600/50 transition">
+          <div class="text-6xl text-orange-500 mb-6"><i class="fas fa-certificate"></i></div>
+          <h3 class="text-3xl font-bold mb-4">Official Certificates</h3>
+          <p class="text-zinc-300 text-lg">Verified company certificates strengthen college & job applications.</p>
+        </div>
+        <div class="bg-zinc-900/60 backdrop-blur-sm border border-zinc-800 p-10 rounded-3xl hover:border-orange-600/50 transition">
+          <div class="text-6xl text-orange-500 mb-6"><i class="fas fa-shield-halved"></i></div>
+          <h3 class="text-3xl font-bold mb-4">100% Safe</h3>
+          <p class="text-zinc-300 text-lg">Parent consent • Verified companies • Moderated communication.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SheLancer -->
+  <section class="py-28 bg-zinc-950">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-5xl md:text-6xl font-bold mb-8">She<span class="text-orange-500">Lancer</span></h2>
+      <p class="text-2xl text-zinc-300 max-w-3xl mx-auto mb-12">
+        A safe, empowering space created especially for girls to learn new skills, earn independently, and grow with confidence — supported by women mentors.
+      </p>
+      <button onclick="showApplyModal()" class="px-14 py-6 bg-orange-600 hover:bg-orange-700 text-black font-bold text-xl rounded-3xl transition">
+        Join SheLancer Today
+      </button>
+    </div>
+  </section>
+</div>
+
+<!-- COMPANY -->
+<div id="company" class="tab-content">
+  <section class="min-h-screen flex items-center bg-gradient-to-br from-zinc-950 via-black to-zinc-950 pt-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div class="space-y-8">
+        <h1 class="text-6xl md:text-7xl font-extrabold leading-tight">
+          For <span class="text-orange-500">Companies</span>
+        </h1>
+        <p class="text-2xl text-zinc-300">
+          Hire creative, motivated, digital-native teenagers — verified, parent-approved, and up to 60–70% more cost-effective than traditional freelancers.
+        </p>
+        <button onclick="showApplyModal()" class="px-12 py-6 bg-orange-600 hover:bg-orange-700 text-black font-bold text-xl rounded-3xl transition shadow-lg shadow-orange-900/40">
+          Post Your First Gig – Free
+        </button>
+      </div>
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800" alt="Business team reviewing teen freelancer work" class="rounded-3xl shadow-2xl shadow-orange-900/30 hidden md:block"/>
+    </div>
+  </section>
+
+  <!-- Company benefits -->
+  <section class="py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16">Why growing companies love Funngro</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="bg-zinc-900/60 backdrop-blur-sm border border-zinc-800 p-10 rounded-3xl hover:border-orange-600/50 transition">
+          <div class="text-6xl text-orange-500 mb-6"><i class="fas fa-coins"></i></div>
+          <h3 class="text-3xl font-bold mb-4">Save 50–70%</h3>
+          <p class="text-zinc-300 text-lg">High-quality work at a fraction of adult freelancer rates.</p>
+        </div>
+        <div class="bg-zinc-900/60 backdrop-blur-sm border border-zinc-800 p-10 rounded-3xl hover:border-orange-600/50 transition">
+          <div class="text-6xl text-orange-500 mb-6"><i class="fas fa-lightbulb"></i></div>
+          <h3 class="text-3xl font-bold mb-4">Gen-Z Creativity</h3>
+          <p class="text-zinc-300 text-lg">Fresh ideas that resonate with younger audiences.</p>
+        </div>
+        <div class="bg-zinc-900/60 backdrop-blur-sm border border-zinc-800 p-10 rounded-3xl hover:border-orange-600/50 transition">
+          <div class="text-6xl text-orange-500 mb-6"><i class="fas fa-shield-check"></i></div>
+          <h3 class="text-3xl font-bold mb-4">Safety & Compliance</h3>
+          <p class="text-zinc-300 text-lg">Parent consent + full platform moderation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ────────────────────────────────────────────────
+     FOOTER + MODAL
+───────────────────────────────────────────────── -->
+
+<footer class="bg-black py-16 border-t border-zinc-800 text-center text-zinc-500 text-sm">
+  <p>© 2025–2026 Funngro • All rights reserved • Made with passion in India</p>
+</footer>
+
+<!-- Apply Modal -->
+<div id="applyModal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
+  <div class="bg-zinc-900 rounded-3xl max-w-lg w-full p-10 relative">
+    <button onclick="closeApplyModal()" class="absolute top-5 right-6 text-3xl text-zinc-500 hover:text-white">&times;</button>
+    <h2 class="text-4xl font-bold mb-8 text-center">Get Started Free</h2>
+    <form class="space-y-6">
+      <input type="text" placeholder="Full Name" class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-orange-500"/>
+      <input type="email" placeholder="Email or Phone" class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-orange-500"/>
+      <input type="number" placeholder="Age (13–19)" min="13" max="19" class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-orange-500"/>
+      <button type="button" onclick="alert('Demo: Account creation started! 🎉')" class="w-full py-5 bg-orange-600 hover:bg-orange-700 text-black font-bold rounded-3xl text-lg transition">
+        Create Account
+      </button>
+      <p class="text-center text-sm text-zinc-500 mt-4">Parent/guardian consent required for users under 18</p>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
