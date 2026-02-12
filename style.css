@@ -3,18 +3,41 @@
 @tailwind utilities;
 
 body {
-    font-family: system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.project-card {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.nav-link {
+  position: relative;
+  transition: color 0.25s;
 }
 
-.project-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 25px 50px -12px rgb(249 115 22 / 0.25);
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f97316;
+  transition: width 0.3s ease;
 }
 
-.glow-orange {
-    box-shadow: 0 0 25px rgb(249 115 22 / 0.3);
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.glass {
+  background: rgba(39, 39, 42, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(63, 63, 70, 0.5);
 }
